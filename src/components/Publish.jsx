@@ -20,7 +20,7 @@ const Publish = () => {
   const fetchStories = async (userId) => {
     try {
       // Use backticks for template literals
-      const response = await axios.get(`http://localhost:3005/api/stories/author/${userId}`);
+      const response = await axios.get(`https://storybook-backend-gd6a.onrender.com/api/stories/author/${userId}`);
       
       // Filter unpublished stories (where isPublished is false)
       const unpublishedStories = response.data.filter((story) => !story.isPublished);
@@ -33,7 +33,7 @@ const Publish = () => {
 
   const handlePublish = async (id) => {
     try {
-      await axios.patch(`http://localhost:3005/api/stories/${id}/publish`);
+      await axios.patch(`https://storybook-backend-gd6a.onrender.com/api/stories/${id}/publish`);
       setStories(stories.filter((story) => story._id !== id));
     } catch (error) {
       console.error("Error publishing story:", error);

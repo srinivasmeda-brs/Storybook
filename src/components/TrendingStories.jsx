@@ -10,7 +10,7 @@ const TrendingStories = () => {
   useEffect(() => {
     const fetchStories = async () => {
       try {
-        const response = await fetch("http://localhost:3005/api/stories");
+        const response = await fetch("https://storybook-backend-gd6a.onrender.com/api/stories");
         const result = await response.json();
         
         // Sort stories by likes in descending order

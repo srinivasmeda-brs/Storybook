@@ -21,7 +21,7 @@ const CreateStoryPage = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:3005/api/stories', {
+      const response = await fetch('https://storybook-backend-gd6a.onrender.com/api/stories', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

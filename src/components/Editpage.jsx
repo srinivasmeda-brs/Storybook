@@ -18,7 +18,7 @@ const EditStoryPage = () => {
     
     const fetchStory = async () => {
       try {
-        const response = await axios.get(`http://localhost:3005/api/stories/${id}`);
+        const response = await axios.get(`https://storybook-backend-gd6a.onrender.com/api/stories/${id}`);
         if (response.data) {
           setTitle(response.data.title);
           setContent(response.data.content);
@@ -44,7 +44,7 @@ const EditStoryPage = () => {
     };
 
     try {
-      const response = await axios.put(`http://localhost:3005/api/stories/${id}`, updatedStory);
+      const response = await axios.put(`https://storybook-backend-gd6a.onrender.com/api/stories/${id}`, updatedStory);
       if (response.data) {
         alert("Story updated successfully!");
         navigate("/"); // Redirect to the homepage after updating

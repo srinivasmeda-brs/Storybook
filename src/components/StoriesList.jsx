@@ -20,7 +20,7 @@ const StoryList = () => {
   
   const fetchStories = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:3005/api/stories/author/${userId}`);
+      const response = await axios.get(`https://storybook-backend-gd6a.onrender.com/api/stories/author/${userId}`);
   
       const publishedStories = response.data.filter((story) => story.isPublished);
       setStories(publishedStories); // Update the state with published stories
@@ -31,7 +31,7 @@ const StoryList = () => {
   
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3005/api/stories/${id}`);
+      await axios.delete(`https://storybook-backend-gd6a.onrender.com/api/stories/${id}`);
       setStories(stories.filter((story) => story._id !== id));
     } catch (error) {
       console.error("Error deleting story:", error);
