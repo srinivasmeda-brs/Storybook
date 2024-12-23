@@ -17,7 +17,7 @@ const ProtectedRoute = ({ children, onlyForAuthors = false, onlyForUsers = false
 
   // Restrict user-only routes
   if (onlyForUsers && isAuthor) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/storybook" replace />;
   }
 
   return children; // Render the protected component

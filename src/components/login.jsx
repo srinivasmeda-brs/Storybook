@@ -66,7 +66,7 @@ const Login = () => {
 
     if (sessionToken && userData) {
       if (isAuthor) {
-        navigate("/"); // Navigate to author route
+        navigate("/storybook"); // Navigate to author route
       } else {
         navigate("/user"); // Navigate to non-author route
       }
