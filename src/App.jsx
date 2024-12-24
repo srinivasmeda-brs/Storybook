@@ -21,7 +21,7 @@ const App = () => {
 
         {/* Author-only routes */}
         <Route
-          path="/storybook"
+          path="/"
           element={
             <ProtectedRoute onlyForAuthors={true}>
               <StoryList />

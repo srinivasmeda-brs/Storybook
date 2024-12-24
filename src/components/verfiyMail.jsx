@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Typography, Box, Button, Divider } from "@mui/material";
 
 const EmailVerifyPage = () => {
   const { verifytoken } = useParams(); // Retrieve token from route parameters
@@ -33,39 +34,68 @@ const EmailVerifyPage = () => {
 
   return (
     <div>
-      <section className="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
-        <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-          <div className="max-w-md text-center mt-7">
-            <div>
-              <figure>
-                <Link to="/home">
-                  <section className="hero container max-w-screen-lg mx-auto flex justify-center">
-                    <img
-                      className="hidden lg:block h-8 w-auto mr-2"
-                      src="/images/logo.svg"
-                      alt="Workflow"
-                    />
-                  </section>
-                </Link>
-                <figcaption className="mb-4">Storytime</figcaption>
-              </figure>
-            </div>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+          backgroundColor: "background.default",
+          padding: 4,
+        }}
+      >
+        <Box
+          sx={{
+            maxWidth: "500px",
+            width: "100%",
+            backgroundColor: "white",
+            borderRadius: 2,
+            boxShadow: 3,
+            padding: 4,
+          }}
+        >
+          <Box sx={{ textAlign: "center" }}>
+            <Link to="/home">
+              <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
+                <img
+                  src="/images/logo.svg"
+                  alt="Storytime"
+                  style={{ height: "40px", width: "auto" }}
+                />
+              </Box>
+            </Link>
+
+            <Typography variant="h4" sx={{ fontWeight: 600, color: "primary.main", mb: 2 }}>
+              Storytime
+            </Typography>
+
+            <Divider sx={{ mb: 2 }} />
 
             {/* Display verification status */}
-            <p className="text-2xl font-semibold md:text-3xl mb-3">{verify}</p>
+            <Typography variant="h6" sx={{ mb: 3 }}>
+              {verify}
+            </Typography>
 
             {/* Login Link */}
             {verify && (
-              <Link
-                className="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
-                to="/login"
-              >
-                Login to continue
+              <Link to="/login" style={{ textDecoration: "none" }}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  sx={{
+                    fontWeight: 600,
+                    borderRadius: 2,
+                    padding: "12px",
+                  }}
+                >
+                  Login to Continue
+                </Button>
               </Link>
             )}
-          </div>
-        </div>
-      </section>
+          </Box>
+        </Box>
+      </Box>
     </div>
   );
 };
