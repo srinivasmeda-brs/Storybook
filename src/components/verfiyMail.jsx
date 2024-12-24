@@ -66,7 +66,7 @@ const EmailVerifyPage = () => {
             </Link>
 
             <Typography variant="h4" sx={{ fontWeight: 600, color: "primary.main", mb: 2 }}>
-              Storytime
+              StoryBook
             </Typography>
 
             <Divider sx={{ mb: 2 }} />
