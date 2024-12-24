@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Grid, Typography, Card, CardContent, Button } from "@mui/material";
+import { Container, Grid, Typography, Card, CardContent } from "@mui/material";
 import Header from "./Header";
 
 const TrendingStories = () => {
@@ -52,13 +52,6 @@ const TrendingStories = () => {
                       Likes: {story.likes}
                     </Typography>
                   </CardContent>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    href={`/story/${story._id}`}
-                  >
-                    Read More
-                  </Button>
                 </Card>
               </Grid>
             ))}
